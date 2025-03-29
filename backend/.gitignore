@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Dependencias de npm (si usas npm)
+package-lock.json
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno (si usas archivos .env para configurar variables de entorno)
+.env
+
+# Directorios de caché
+/.cache
+
+# Archivos de logs
+*.log
+
+# Archivos de configuraciones de IDEs y editores de texto
+.vscode/
+.idea/
+
+# Archivos de tests
+coverage/

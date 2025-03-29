@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", "sans-serif";
+
+  --breakpoint-3xl: 1920px;
+
+  --text-xs: 10px;
+  --text-sm: 12px;
+  --text-md: 16px;
+  --text-lg: 18px;
+
+  --color-blue-100: #0466c8;
+  --color-blue-200: #0353a4;
+  --color-blue-300: #023e7d;
+  --color-blue-400: #002855;
+  --color-blue-500: #001845;
+  --color-blue-600: #001233;
+  --color-grayBlue-100: #979dac;
+  --color-grayBlue-200: #7d8597;
+  --color-grayBlue-300: #5c677d;
+  --color-grayBlue-400: #33415c;
+
+  --text-color-primary: #433e3c;
+  --text-color-content: #505050;
+  --text-color-secondary: #e7dbbf;
+
+  --bg-color-gray-theme: #f5eeee;
+  --bg-color-lighten-theme: #fcfbfc;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-display);
+
+    & body {
+      overflow-x: hidden;
+      background-color: var(--bg-color-lighten-theme);
+    }
+  }
+
+  .bg__pattern {
+    background-color: #ffffff;
+    opacity: 0.2;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #828282 25%,
+        transparent 25%,
+        transparent 75%,
+        #828282 75%,
+        #828282
+      ),
+      repeating-linear-gradient(
+        45deg,
+        #828282 25%,
+        #ffffff 25%,
+        #ffffff 75%,
+        #828282 75%,
+        #828282
+      );
+    background-position: 0 0, 24px 24px;
+    background-size: 48px 48px;
+  }
+}
+
+@layer utilities {
+  .error {
+    @apply pb-2 text-xs text-red-700;
+  }
+
+  .auth__bg {
+    @apply hidden md:block w-[40vw] h-screen bg-[url('/images/auth__bg.jpg')] bg-no-repeat bg-cover bg-center opacity-50;
+  }
+
+  .logo--text {
+    @apply text-lg font-bold text-primary;
+  }
+
+  .title {
+    @apply text-xl font-semibold text-primary;
+  }
+
+  .paragraph {
+    @apply mb-2 text-sm text-content;
+  }
+
+  .input-label {
+    @apply mb-1 text-xs text-content;
+  }
+
+  .input-box {
+    @apply w-full mb-2 px-4 py-2 flex justify-between gap-3 border border-[var(--color-blue-600)]/25 rounded bg-[var(--bg-color-gray-theme)];
+  }
+
+  .input {
+    @apply w-full text-sm text-content outline-none bg-transparent cursor-text;
+  }
+
+  .btn-primary {
+    @apply w-full my-2 p-2 text-sm font-medium text-white rounded-md bg-[var(--text-color-primary)] shadow-lg transition hover:bg-[var(--text-color-primary)]/90 cursor-pointer;
+  }
+
+  .link-text {
+    @apply text-sm text-content;
+  }
+
+  .link {
+    @apply text-primary font-semibold cursor-pointer transition hover:text-primary/75;
+  }
+
+  .uploadBtn {
+    @apply w-8 h-8 absolute -bottom-1 -right-1 flex items-center justify-center text-content rounded-full bg-[var(--text-color-secondary)] cursor-pointer;
+  }
+
+  .imgToUpload {
+    @apply w-20 h-20 rounded-full object-cover;
+  }
+
+  .removeBtn {
+    @apply w-8 h-8 absolute -bottom-1 -right-1 flex items-center justify-center text-secondary rounded-full bg-red-400 cursor-pointer;
+  }
+
+  .linkMenu {
+    @apply w-full mb-3 py-3 px-6 flex items-center gap-4 text-md rounded-lg cursor-pointer transition;
+  }
+
+  .user-name {
+    @apply text-content font-medium leading-6;
+  }
+
+  .details-icon {
+    @apply w-14 h-14 flex justify-center items-center text-[26px] text-white rounded-full drop-shadow-xl;
+  }
+
+  .details-label {
+    @apply mb-1 text-sm font-medium text-content;
+  }
+
+  .details-value {
+    @apply text-lg;
+  }
+
+  .card {
+    @apply flex justify-between items-center;
+  }
+
+  .card-title {
+    @apply text-lg;
+  }
+
+  .card-btn {
+    @apply px-4 py-1.5 flex items-center gap-3 text-sm font-medium text-content hover:text-secondary hover:bg-(--text-color-primary) rounded-lg border border-gray-200/50 hover:border-none cursor-pointer;
+  }
+
+  .add-btn {
+    @apply px-4 py-2 flex items-center gap-1.5 text-xs md:text-sm font-medium text-content hover:text-white whitespace-nowrap bg-[#EDE8DC] hover:bg-[#C1CFA1] border border-neutral-300/75 rounded-lg shadow-md cursor-pointer transition-all;
+  }
+
+  .delete-btn {
+    @apply px-4 py-2 flex items-center gap-1.5 text-xs md:text-sm font-medium text-content hover:text-white whitespace-nowrap bg-rose-200 hover:bg-rose-700 border border-neutral-300/75 rounded-lg shadow-md cursor-pointer transition-all;
+  }
+
+  .modal {
+    @apply w-full h-full max-h-full overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 flex justify-center items-center text-content bg-black/50 z-50;
+  }
+
+  .download-btn {
+    @apply px-4 py-1.5 flex items-center gap-3 text-sm font-medium text-content hover:bg-orange-300 hover:text-white rounded-lg border border-gray-200/50 hover:border-none cursor-pointer;
+  }
+}
+
+@layer components {
+  /* Auth layout */
+  .authLayout {
+    @apply w-screen h-screen md:w-[60vw] pt-8 pb-12 px-12;
+  }
+
+  .auth__container {
+    @apply xl:w-[70%] h-3/4 md:h-full flex flex-col justify-center;
+  }
+
+  /* Register container */
+  .register__container {
+    @apply xl:w-[70%] h-3/4 md:h-full mt-10 md:mt-0 flex flex-col justify-center;
+  }
+
+  .register-grid-container {
+    @apply mt-2 grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+
+  /* Profile image container */
+  .profileImg-container {
+    @apply mb-6 flex justify-center;
+  }
+
+  .image-container {
+    @apply w-20 h-20 relative flex items-center justify-center rounded-full bg-(--text-color-primary);
+  }
+
+  /* Navbar container */
+  .navbar {
+    @apply py-4 px-7 sticky top-0 flex gap-5 backdrop-blur-[5px] z-30;
+  }
+
+  /* Sidebar container */
+  .sideBar {
+    @apply -ml-4 fixed top-[61px] bg-white;
+  }
+
+  .sideMenu {
+    @apply w-64 h-[calc(100vh-61px)] p-5 sticky top-[61px] border-r border-gray-200 bg-[#fafaf9] shadow-lg z-20;
+  }
+
+  .sideMenu__userDetails {
+    @apply mt-3 mb-7 flex flex-col items-center justify-center gap-3;
+  }
+
+  /* InfoCard */
+  .infoCards__container {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+  }
+
+  .infoCard__details {
+    @apply p-6 flex gap-6 border border-neutral-200/50 bg-white rounded-2xl shadow-md shadow-gray-200;
+  }
+
+  /* Recent Transactions */
+  .recentTransactions__container {
+    @apply mt-6 grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
+  .recentTransactions__card {
+    @apply p-6 border border-neutral-300/75 rounded-2xl bg-white shadow-lg shadow-gray-200;
+  }
+
+  .transaction {
+    @apply mt-2 p-3 relative flex items-center gap-4 rounded-lg hover:bg-gray-100/60;
+  }
+
+  .transaction-icon {
+    @apply w-12 h-12 flex justify-center items-center text-xl text-primary bg-neutral-300 rounded-full;
+  }
+
+  .transaction-details {
+    @apply flex-1 flex justify-between items-center;
+  }
+}
