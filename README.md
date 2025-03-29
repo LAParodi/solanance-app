@@ -47,10 +47,7 @@ Instalar dependencias y ejecutar. Tanto backend, como frontend, y en dos termina
 
 ## Video
 
-<video width="100%" height="350" controls>
-  <source src="./videoDemo/solance-demo.mp4" type="video/mp4">
-  Tu navegador no soporta el elemento de video.
-</video>
+Puedes encontrar el vídeo DEMO en la carpeta de Video Demo
 
 ## Contacto
 
